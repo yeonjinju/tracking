@@ -1,0 +1,149 @@
+# ---- System related ---- #
+
+# MacOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msm
+*.msp
+*.lnk
+
+# ---- Project & Language related ---- #
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+*.pnp
+.pnp.js
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+dist/
+build/
+*.egg
+*.spec
+
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.backup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# ---- Development Environment related ---- #
+
+# VS Code
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history
+
+# Eclipse / STS4
+.metadata
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.loadpath
+.recommenders
+.externalToolBuilders/
+.classpath
+.project
+.cproject
+.settings/
+springBeans/
+
+# IntelliJ / JetBrains
+.idea/
+*.iws
+*.iml
+*.ipr
+*.ids
+*.orig
+*.bak
+*.old
+*.swp
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.save
+
+# ---- Others ---- #
+
+# Logs and databases
+*.log
+*.sql
+*.sqlite
+
+# OS generated files
+ehthumbs.db
+Icon?
+Thumbs.db
+
+# Environment secrets
+.env
+.env.*.local
+
+# Temporary files
+*.tmp
+*.temp
+*.backup
+*.bak
+*.swp
+*.swo
+*.rej
+*.old
+*.orig
+*.dist
+*.t
+*.gz
+*.zip
+*.7z
+*.tar
+*.tar.gz
+*.rar
+
+# Patch files
+*.patch
+*.diff
+

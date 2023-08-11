@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.acorn.tracking.mapper.OrdersMapper">
+
+    <insert id="autoInsertOrders">
+        INSERT INTO Orders (date_time, quantity_ordered, total_price, latitude , longitude, customer_name)
+        VALUES (CURRENT_TIMESTAMP, #{quantity_ordered}, #{total_price}, #{latitude}, #{longitude}, #{customer_name})
+    </insert>
+
+    <select id="getLastInsertedOrderId" resultType="int">
+        SELECT LAST_INSERT_ID()
+    </select>
+
+</mapper>
