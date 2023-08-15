@@ -8,14 +8,11 @@
         VALUES (#{product_name}, #{price}, #{category}, 100, CURRENT_TIMESTAMP)
     </insert>
 
-    <select id="getRandomProductsInfo" resultType="com.acorn.tracking.domain.Products$ProductInfo">
-        SELECT GROUP_CONCAT(product_id) AS product_id, SUM(price) AS total_price
-        FROM (
-            SELECT product_id, price
-            FROM Products
-            ORDER BY RAND()
-            LIMIT #{count}
-        ) AS temp_table
+    <select id="getRandomProducts" parameterType="int" resultType="com.acorn.tracking.domain.Products">
+        SELECT * 
+        FROM Products 
+        ORDER BY RAND() 
+        LIMIT #{count}
     </select>
 
     <update id="inventoryReduction">

@@ -21,19 +21,32 @@ public class DeliveriesServiceImpl implements DeliveriesService {
     private final DeliveriesMapper deliveriesMapper;
 
     @Override
-    public void autoInsertDelivery(int order_id) {
+    public void autoInsertDeliveries(int order_id) {
         try {
-            Deliveries deliveries = Deliveries
-                    .builder()
-                    .order_id(order_id)
-                    .delivery_status("배송중")
-                    .latitude(new BigDecimal("37.56471"))
-                    .longitude(new BigDecimal("126.97512"))
-                    .build();
-
-            deliveriesMapper.autoInsertDelivery(deliveries);
+            deliveriesMapper.autoInsertDeliveries(createDeliveries(order_id));
+        } catch (NumberFormatException e) {
+            handleNumberFormatException(e);
         } catch (Exception e) {
-            logger.error("An error occurred while inserting the delivery for order ID: " + order_id, e);
+            handleGeneralException(e);
         }
+    }
+
+    private Deliveries createDeliveries(int order_id) {
+        return Deliveries.builder()
+                .order_id(order_id)
+                .delivery_status("배송중")
+                .latitude(new BigDecimal(37.52318))
+                .longitude(new BigDecimal(126.95853))
+                .build();
+    }
+
+    private void handleNumberFormatException(NumberFormatException e) {
+        logger.error("Number format exception occurred while creating deliveries object", e);
+        throw new IllegalArgumentException("Invalid number format in deliveries details", e);
+    }
+
+    private void handleGeneralException(Exception e) {
+        logger.error("An unexpected error occurred while inserting deliveries", e);
+        throw new RuntimeException("Unexpected error inserting deliveries", e);
     }
 }

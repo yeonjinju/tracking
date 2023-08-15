@@ -6,5 +6,5 @@ import com.acorn.tracking.domain.Deliveries;
 
 @Mapper
 public interface DeliveriesMapper {
-    void autoInsertDelivery(Deliveries deliveries);
+    void autoInsertDeliveries(Deliveries deliveries);
 }
